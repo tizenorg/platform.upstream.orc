@@ -6,7 +6,6 @@ Summary:        The Oil Runtime Compiler
 Url:            http://code.entropywave.com/projects/orc/
 Group:          Productivity/Multimedia/Other
 Source:         http://code.entropywave.com/download/orc/%{name}-%{version}.tar.gz
-BuildRequires:  gtk-doc
 BuildRequires:  libxslt-tools
 BuildRequires:  pkg-config
 Provides:       %{name}-devel = %{version}
