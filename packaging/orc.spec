@@ -4,7 +4,7 @@ Release:        0
 License:        BSD-3-Clause
 Summary:        The Oil Runtime Compiler
 Url:            http://code.entropywave.com/projects/orc/
-Group:          Productivity/Multimedia/Other
+Group:          Multimedia/Libraries
 Source:         http://code.entropywave.com/download/orc/%{name}-%{version}.tar.gz
 BuildRequires:  libxslt-tools
 BuildRequires:  pkg-config
@@ -19,7 +19,7 @@ arithmetic operations.
 
 %package -n liborc
 Summary:        The Oil Runtime Compiler Library
-Group:          System/Libraries
+Group:          Multimedia/Libraries
 
 %description -n liborc
 Orc is a library and set of tools for compiling and executing very simple
@@ -30,7 +30,7 @@ arithmetic operations.
 
 %package doc
 Summary:        The Oil Runtime Compiler Library - Documentation
-Group:          Documentation/HTML
+Group:          Documentation
 
 %description doc
 Orc is a library and set of tools for compiling and executing very simple
@@ -64,6 +64,7 @@ rm -rf %{buildroot}%{_libdir}/orc
 
 %files
 %defattr(-,root,root)
+%license COPYING
 %{_bindir}/orc-bugreport
 %{_bindir}/orcc
 %{_includedir}/orc-0.4/
