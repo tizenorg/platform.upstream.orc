@@ -6,6 +6,7 @@ Summary:        The Oil Runtime Compiler
 Url:            http://code.entropywave.com/projects/orc/
 Group:          Multimedia/Libraries
 Source:         http://code.entropywave.com/download/orc/%{name}-%{version}.tar.gz
+Source1001: 	orc.manifest
 BuildRequires:  libxslt-tools
 BuildRequires:  pkg-config
 Provides:       %{name}-devel = %{version}
@@ -41,6 +42,7 @@ arithmetic operations.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure \
@@ -63,6 +65,7 @@ rm -rf %{buildroot}%{_libdir}/orc
 %postun -n liborc -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING
 %{_bindir}/orc-bugreport
@@ -73,9 +76,11 @@ rm -rf %{buildroot}%{_libdir}/orc
 %{_datadir}/aclocal/orc.m4
 
 %files doc
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_datadir}/gtk-doc/html/orc/
 
 %files -n liborc
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_libdir}/liborc*-0.4.so.*
